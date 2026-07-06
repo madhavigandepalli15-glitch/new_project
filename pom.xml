@@ -8,15 +8,15 @@
 
     <modelVersion>4.0.0</modelVersion> 
 
-    <groupId>754babc1-7282-4202-92f7-276457e43970</groupId> 
+    <groupId>866fb817-1f36-403c-a07e-ff92eb1a09aa</groupId> 
 
-    <artifactId>http-logger-poc</artifactId> 
+    <artifactId>new_project</artifactId> 
 
-    <version>1.0.4</version> 
+    <version>1.0.7</version> 
 
     <packaging>mule-application</packaging> 
 
-    <name>http-logger-poc</name> 
+    <name>new_project</name> 
 
     <properties> 
 
@@ -56,9 +56,9 @@
 
                         <target>Cloudhub-US-East-2</target> 
 
-                        <businessGroupId>754babc1-7282-4202-92f7-276457e43970</businessGroupId> 
+                        <businessGroupId>866fb817-1f36-403c-a07e-ff92eb1a09aa</businessGroupId> 
 
-                        <applicationName>http-logger-poc</applicationName> 
+                        <applicationName>new_project</applicationName> 
 
                         <connectedAppClientId>${env.ANYPOINT_CLIENT_ID}</connectedAppClientId> 
 
