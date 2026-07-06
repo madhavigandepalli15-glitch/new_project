@@ -1,87 +1,22 @@
-name: Mule Deploy 
-
-on: 
-
-  push: 
-
-    branches: 
-
-      - master 
-
-jobs: 
-
-  deploy: 
-
-    runs-on: ubuntu-latest 
-
-    steps: 
-
-      - uses: actions/checkout@v4 
-
- 
-
-      - uses: actions/setup-java@v4 
-
-        with: 
-
-          distribution: temurin 
-
-          java-version: 17 
-
- 
-
-      - name: Configure Maven Settings 
-
-        run: | 
-
-          mkdir -p ~/.m2 
-
-          cat > ~/.m2/settings.xml << EOF 
-
-          <settings> 
-
-            <servers> 
-
-              <server> 
-
-                <id>anypoint-exchange-v3</id> 
-
-                <username>~~~Client~~~</username> 
-
-                <password>$ANYPOINT_CLIENT_ID~?~$ANYPOINT_CLIENT_SECRET</password> 
-
-              </server> 
-
-              <server> 
-
-                <id>mulesoft-releases</id> 
-
-                <username>~~~Client~~~</username> 
-
-                <password>$ANYPOINT_CLIENT_ID~?~$ANYPOINT_CLIENT_SECRET</password> 
-
-              </server> 
-
-            </servers> 
-
-          </settings> 
-
-          EOF 
-
-        env: 
-
-          ANYPOINT_CLIENT_ID: ${{ secrets.ANYPOINT_CLIENT_ID }} 
-
-          ANYPOINT_CLIENT_SECRET: ${{ secrets.ANYPOINT_CLIENT_SECRET }} 
-
- 
-
-      - name: Deploy to CloudHub 
-
-        run: mvn clean deploy mule:deploy --no-transfer-progress 
-
-        env: 
-
-          ANYPOINT_CLIENT_ID: ${{ secrets.ANYPOINT_CLIENT_ID }} 
-
-          ANYPOINT_CLIENT_SECRET: ${{ secrets.ANYPOINT_CLIENT_SECRET }} 
+- name: Configure Maven Settings
+  run: |
+    mkdir -p ~/.m2
+    cat > ~/.m2/settings.xml <<EOF
+    <settings>
+      <servers>
+        <server>
+          <id>anypoint-exchange-v3</id>
+          <username>~~~Client~~~</username>
+          <password>${ANYPOINT_CLIENT_ID}~?~${ANYPOINT_CLIENT_SECRET}</password>
+        </server>
+        <server>
+          <id>mulesoft-releases</id>
+          <username>~~~Client~~~</username>
+          <password>${ANYPOINT_CLIENT_ID}~?~${ANYPOINT_CLIENT_SECRET}</password>
+        </server>
+      </servers>
+    </settings>
+EOF
+  env:
+    ANYPOINT_CLIENT_ID: ${{ secrets.ANYPOINT_CLIENT_ID }}
+    ANYPOINT_CLIENT_SECRET: ${{ secrets.ANYPOINT_CLIENT_SECRET }}
