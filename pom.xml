@@ -10,13 +10,13 @@
 
     <groupId>866fb817-1f36-403c-a07e-ff92eb1a09aa</groupId> 
 
-    <artifactId>new_project</artifactId> 
+    <artifactId>new-project</artifactId> 
 
     <version>1.0.7</version> 
 
     <packaging>mule-application</packaging> 
 
-    <name>new_project</name> 
+    <name>new-project</name> 
 
     <properties> 
 
@@ -58,7 +58,7 @@
 
                         <businessGroupId>866fb817-1f36-403c-a07e-ff92eb1a09aa</businessGroupId> 
 
-                        <applicationName>new_project</applicationName> 
+                        <applicationName>new-project</applicationName> 
 
                         <connectedAppClientId>${env.ANYPOINT_CLIENT_ID}</connectedAppClientId> 
 
