@@ -16,7 +16,7 @@
         </server>
       </servers>
     </settings>
-EOF
+    EOF
   env:
     ANYPOINT_CLIENT_ID: ${{ secrets.ANYPOINT_CLIENT_ID }}
     ANYPOINT_CLIENT_SECRET: ${{ secrets.ANYPOINT_CLIENT_SECRET }}
